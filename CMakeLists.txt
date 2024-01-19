@@ -13,9 +13,15 @@ set(ENV_FILE_SOURCE ${CMAKE_SOURCE_DIR}/.env)
 set(ENV_FILE_DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/.env)
 configure_file(${ENV_FILE_SOURCE} ${ENV_FILE_DESTINATION} COPYONLY)
 
-add_library(${PROJECT_NAME}
+add_library(${PROJECT_NAME} STATIC
         include/twelvedata.h
         src/twelvedata.cpp
+)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+        CXX_STANDARD 20
+        CXX_STANDARD_REQUIRED ON
+        POSITION_INDEPENDENT_CODE ON
 )
 
 include(cmake/CPM.cmake)
