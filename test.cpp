@@ -6,11 +6,13 @@
 int main() {
     dotenv::init();
 
-    std::string key = dotenv::getenv("TWELVEDATA_API_KEY");
+    auto key = std::getenv("TWELVEDATA_API_KEY");
 
-    Twelvedata::Reference::StocksList stocksList = Twelvedata::Reference::getStocksList(key.c_str());
+    Twelvedata::Reference::StocksList stocksList = Twelvedata::Reference::getStocksList(key);
 
-    std::cout << stocksList.data[0].name << std::endl;
+    for (const auto &stock : stocksList.data) {
+        std::cout << stock.symbol << std::endl;
+    }
 
     return 0;
 }
