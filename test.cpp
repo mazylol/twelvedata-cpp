@@ -14,8 +14,6 @@ std::string httpGet(const char *endpoint) {
 int main() {
     dotenv::init();
 
-    auto key = std::getenv("TWELVEDATA_API_KEY");
-
     Twelvedata::Reference::StocksList stocksList = Twelvedata::Reference::getStocksList(httpGet);
 
     for (const auto &stock : stocksList.data) {
