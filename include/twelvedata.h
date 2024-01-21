@@ -1,8 +1,11 @@
 #ifndef TWELVEDATA_H
 #define TWELVEDATA_H
 
+#include <functional>
 #include <string>
 #include <vector>
+
+using GetFunction = std::function<std::string(const char *)>;
 
 namespace Twelvedata {
     struct Access {
@@ -27,7 +30,7 @@ namespace Twelvedata {
             std::string status;
         };
 
-        static StocksList getStocksList(const char *key);
+        static StocksList getStocksList(GetFunction getFunc);
     };
 }
 

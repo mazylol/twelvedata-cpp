@@ -4,9 +4,9 @@
 #include <iostream>
 #include <nlohmann/json.hpp>
 
-Twelvedata::Reference::StocksList Twelvedata::Reference::getStocksList(const char *key) {
+Twelvedata::Reference::StocksList Twelvedata::Reference::getStocksList(GetFunction getFunc) {
     try {
-        std::string text = cpr::Get(cpr::Url{"https://api.twelvedata.com/stocks"}, cpr::Header{{"Authorization", key}}).text;
+        std::string text = getFunc("https://api.twelvedata.com/stocks");
 
         nlohmann::json object = nlohmann::json::parse(text);
 
