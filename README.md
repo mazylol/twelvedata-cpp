@@ -17,16 +17,13 @@ std::string httpGet(const char *endpoint) {
 }
 
 int main() {
-	auto stocksList = Twelvedata::Reference::getStocksList(httpGet);
+    auto stocksList = Twelvedata::Reference::getStocksList(httpGet);
 	
-	for (const auto &stock : stocksList.data) {
-		std::cout << stock.symbol << std::endl;
-	}
+    for (const auto &stock : stocksList.data) {
+        std::cout << stock.symbol << std::endl;
+    }
 
-	return 0;
+    return 0;
 }
-
-
-
 ```
 
