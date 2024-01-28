@@ -1,5 +1,5 @@
 #include <dotenv.h>
-#include <twelvedata.h>
+#include <twelvedata.hpp>
 
 #include <cpr/cpr.h>
 

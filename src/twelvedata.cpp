@@ -1,4 +1,4 @@
-#include <twelvedata.h>
+#include <twelvedata.hpp>
 
 #include <cpr/cpr.h>
 #include <iostream>

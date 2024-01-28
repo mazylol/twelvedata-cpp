@@ -29,7 +29,8 @@ namespace Twelvedata {
             std::vector<StockListItem> data;
             std::string status;
         };
-
+        
+        /// get a list of stocks
         static StocksList getStocksList(GetFunction getFunc);
     };
 }
