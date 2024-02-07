@@ -9,9 +9,6 @@ if (CCACHE_PROGRAM)
     set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
 endif ()
 
-set(ENV_FILE_SOURCE ${CMAKE_SOURCE_DIR}/.env)
-set(ENV_FILE_DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/.env)
-configure_file(${ENV_FILE_SOURCE} ${ENV_FILE_DESTINATION} COPYONLY)
 
 add_library(${PROJECT_NAME} STATIC
         include/twelvedata.hpp
@@ -34,6 +31,11 @@ target_link_libraries(${PROJECT_NAME} fmt::fmt nlohmann_json::nlohmann_json)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include)
 
 if(BUILD_TESTING)
+    set(ENV_FILE_SOURCE ${CMAKE_SOURCE_DIR}/.env)
+    set(ENV_FILE_DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/.env)
+    configure_file(${ENV_FILE_SOURCE} ${ENV_FILE_DESTINATION} COPYONLY)
+
+
     CPMAddPackage("gh:laserpants/dotenv-cpp#432def2fb9c2a5e51e6d491f35f2e8f35fa900b0")
     CPMAddPackage("gh:libcpr/cpr#1.10.5") # subject to change
 
