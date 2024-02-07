@@ -33,13 +33,15 @@ target_link_libraries(${PROJECT_NAME} fmt::fmt nlohmann_json::nlohmann_json)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include)
 
-CPMAddPackage("gh:laserpants/dotenv-cpp#432def2fb9c2a5e51e6d491f35f2e8f35fa900b0")
-CPMAddPackage("gh:libcpr/cpr#1.10.5") # subject to change
+if(BUILD_TESTING)
+    CPMAddPackage("gh:laserpants/dotenv-cpp#432def2fb9c2a5e51e6d491f35f2e8f35fa900b0")
+    CPMAddPackage("gh:libcpr/cpr#1.10.5") # subject to change
 
-add_executable(${PROJECT_NAME}_test test.cpp)
-target_link_libraries(${PROJECT_NAME}_test ${PROJECT_NAME} dotenv cpr::cpr)
+    add_executable(${PROJECT_NAME}_test test.cpp)
+    target_link_libraries(${PROJECT_NAME}_test PRIVATE ${PROJECT_NAME} dotenv cpr::cpr)
 
-set_target_properties(${PROJECT_NAME}_test PROPERTIES
-        CXX_STANDARD 20
-        CXX_STANDARD_REQUIRED ON
-)
+    set_target_properties(${PROJECT_NAME}_test PROPERTIES
+            CXX_STANDARD 20
+            CXX_STANDARD_REQUIRED ON
+    )
+endif()
