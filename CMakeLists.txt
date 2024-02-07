@@ -26,7 +26,7 @@ include(cmake/CPM.cmake)
 CPMAddPackage("gh:fmtlib/fmt#7.1.3")
 CPMAddPackage("gh:nlohmann/json@3.10.5")
 
-target_link_libraries(${PROJECT_NAME} fmt::fmt nlohmann_json::nlohmann_json)
+target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt nlohmann_json::nlohmann_json)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include)
 
