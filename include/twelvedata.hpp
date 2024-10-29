@@ -29,9 +29,25 @@ namespace Twelvedata {
             std::vector<StockListItem> data;
             std::string status;
         };
+
+        struct ForexPairListItem {
+            std::string symbol;
+            std::string currency_group;
+            std::string currency_base;
+            std::string currency_quote;
+        };
+
+        struct ForexPairsList {
+            std::vector<ForexPairListItem> data;
+            int count;
+            std::string status;
+        };
         
         /// get a list of stocks
         static StocksList getStocksList(GetFunction getFunc);
+
+        /// get a list of forex pairs
+        static ForexPairsList getForexPairsList(GetFunction getFunc);
     };
 }
 
