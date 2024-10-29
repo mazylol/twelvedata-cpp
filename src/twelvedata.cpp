@@ -3,7 +3,7 @@
 #include <iostream>
 #include <nlohmann/json.hpp>
 
-Twelvedata::Reference::StocksList Twelvedata::Reference::getStocksList(GetFunction getFunc, std::unordered_map<std::string, std::string> params) {
+Twelvedata::Reference::StocksList Twelvedata::Reference::getStocksList(GetFunction getFunc, std::unordered_map<const char *, const char *> params) {
     try {
         std::string text = getFunc("https://api.twelvedata.com/stocks", params);
 
@@ -39,7 +39,7 @@ Twelvedata::Reference::StocksList Twelvedata::Reference::getStocksList(GetFuncti
     }
 }
 
-Twelvedata::Reference::ForexPairsList Twelvedata::Reference::getForexPairsList(GetFunction getFunc, std::unordered_map<std::string, std::string> params) {
+Twelvedata::Reference::ForexPairsList Twelvedata::Reference::getForexPairsList(GetFunction getFunc, std::unordered_map<const char *, const char *> params) {
     try {
         std::string text = getFunc("https://api.twelvedata.com/forex_pairs", params);
 

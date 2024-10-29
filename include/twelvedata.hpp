@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-using GetFunction = std::function<std::string(const char *, std::unordered_map<std::string, std::string>)>;
+using GetFunction = std::function<std::string(const char *, std::unordered_map<const char *, const char *>)>;
 
 namespace Twelvedata {
     struct Access {
@@ -44,10 +44,10 @@ namespace Twelvedata {
         };
         
         /// get a list of stocks
-        static StocksList getStocksList(GetFunction getFunc, std::unordered_map<std::string, std::string> params);
+        static StocksList getStocksList(GetFunction getFunc, std::unordered_map<const char *, const char *> params);
 
         /// get a list of forex pairs
-        static ForexPairsList getForexPairsList(GetFunction getFunc, std::unordered_map<std::string, std::string> params);
+        static ForexPairsList getForexPairsList(GetFunction getFunc, std::unordered_map<const char *, const char *> params);
     };
 }
 
