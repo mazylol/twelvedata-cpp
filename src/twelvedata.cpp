@@ -3,9 +3,9 @@
 #include <iostream>
 #include <nlohmann/json.hpp>
 
-Twelvedata::Reference::StocksList Twelvedata::Reference::getStocksList(GetFunction getFunc) {
+Twelvedata::Reference::StocksList Twelvedata::Reference::getStocksList(GetFunction getFunc, std::unordered_map<std::string, std::string> params) {
     try {
-        std::string text = getFunc("https://api.twelvedata.com/stocks");
+        std::string text = getFunc("https://api.twelvedata.com/stocks", params);
 
         nlohmann::json object = nlohmann::json::parse(text);
 
@@ -39,9 +39,9 @@ Twelvedata::Reference::StocksList Twelvedata::Reference::getStocksList(GetFuncti
     }
 }
 
-Twelvedata::Reference::ForexPairsList Twelvedata::Reference::getForexPairsList(GetFunction getFunc) {
+Twelvedata::Reference::ForexPairsList Twelvedata::Reference::getForexPairsList(GetFunction getFunc, std::unordered_map<std::string, std::string> params) {
     try {
-        std::string text = getFunc("https://api.twelvedata.com/forex_pairs");
+        std::string text = getFunc("https://api.twelvedata.com/forex_pairs", params);
 
         // Parse the JSON response
         nlohmann::json object = nlohmann::json::parse(text);

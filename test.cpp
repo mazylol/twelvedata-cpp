@@ -6,8 +6,22 @@
 #include <iostream>
 
 /// The function has to return a string and take a const char* as an argument
-std::string httpGet(const char *endpoint) {
-    std::string text = cpr::Get(cpr::Url{endpoint}, cpr::Header{{"Authorization", std::getenv("TWELVEDATA_API_KEY")}}).text;
+std::string httpGet(const char *endpoint, std::unordered_map<std::string, std::string> params) {
+    std::string url = endpoint;
+
+    if (!params.empty()) {
+        url += "?";
+
+        for (const auto &param : params) {
+            url += param.first + "=" + param.second + "&";
+        }
+
+        url.pop_back();
+    }
+
+    std::cout << url << std::endl;
+
+    std::string text = cpr::Get(cpr::Url{url}, cpr::Header{{"Authorization", std::getenv("TWELVEDATA_API_KEY")}}).text;
 
     return text;
 }
@@ -15,17 +29,20 @@ std::string httpGet(const char *endpoint) {
 int main() {
     dotenv::init();
 
-    //Twelvedata::Reference::StocksList stocksList = Twelvedata::Reference::getStocksList(httpGet);
+    /*Twelvedata::Reference::StocksList stocksList = Twelvedata::Reference::getStocksList(httpGet, {});
 
-    //for (const auto &stock : stocksList.data) {
-    //    std::cout << stock.symbol << std::endl;
-    //}
+    for (const auto &stock : stocksList.data) {
+        std::cout << stock.symbol << std::endl;
+    }*/
 
-    Twelvedata::Reference::ForexPairsList forexPairsList = Twelvedata::Reference::getForexPairsList(httpGet);
+    /*Twelvedata::Reference::ForexPairsList forexPairsList = Twelvedata::Reference::getForexPairsList(httpGet);
 
     for (const auto &forexPair : forexPairsList.data) {
         std::cout << forexPair.symbol << std::endl;
-    }
+    }*/
+
+    
+
 
     return 0;
 }
