@@ -33,7 +33,7 @@ Twelvedata::Reference::StockList Twelvedata::Reference::getStockList(
 
         return stockList;
     } catch (const std::exception &e) {
-        std::cerr << "Error parsing JSON: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
         return {};
     }
 }

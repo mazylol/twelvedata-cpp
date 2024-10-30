@@ -6,13 +6,13 @@
 #include <iostream>
 
 /// The function has to return a string and take a const char* as an argument and an unordered map of strings as an argument
-std::string httpGet(const char *endpoint, const std::unordered_map<const char *, const char *>& params) {
+std::string httpGet(const char *endpoint, const std::unordered_map<const char *, const char *> &params) {
     std::string url = endpoint;
 
     if (!params.empty()) {
         url += "?";
 
-        for (const auto &param : params) {
+        for (const auto &param: params) {
             url += param.first;
             url += "=";
             url += param.second;
@@ -44,11 +44,29 @@ int main() {
         std::cout << forexPair.symbol << std::endl;
     }*/
 
-    Twelvedata::Reference::CryptoList cryptoList = Twelvedata::Reference::getCryptoList(httpGet, {});
+    /*Twelvedata::Reference::CryptoList cryptoList = Twelvedata::Reference::getCryptoList(httpGet, {});
 
     for (const auto &crypto : cryptoList.data) {
         std::cout << crypto.symbol << std::endl;
+    }*/
+
+    /*Twelvedata::Reference::FundsList fundsList = Twelvedata::Reference::getFundsList(httpGet, {});
+
+    for (const auto &fund : fundsList.result.list) {
+        std::cout << fund.symbol << std::endl;
+    }*/
+
+    Twelvedata::Reference::FundsList fundsList = Twelvedata::Reference::getFundsList(httpGet, {});
+
+    std::cout << fundsList.result.count << std::endl;
+
+    int count = 0;
+
+    for (const auto &fund: fundsList.result.list) {
+        count += 1;
     }
+
+    std::cout << count << std::endl;
 
     return 0;
 }
