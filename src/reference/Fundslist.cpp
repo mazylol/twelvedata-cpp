@@ -1,8 +1,8 @@
 #include "Fundslist.h"
 
 Twelvedata::Reference::FundsList Twelvedata::Reference::getFundsList(
-        const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
-        std::unordered_map<const char *, const char *> params) {
+    const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+    std::unordered_map<const char *, const char *> params) {
     try {
         std::string text = getFunc("https://api.twelvedata.com/funds", std::move(params));
 
@@ -16,7 +16,7 @@ Twelvedata::Reference::FundsList Twelvedata::Reference::getFundsList(
 
         fundResult.count = object.at("result").at("count").get<int>();
 
-        for (const auto &dataJson: object.at("result").at("list")) {
+        for (const auto &dataJson : object.at("result").at("list")) {
             FundListItem listItem;
 
             listItem.symbol = dataJson.at("symbol").get<std::string>();

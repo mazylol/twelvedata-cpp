@@ -9,18 +9,11 @@ if (CCACHE_PROGRAM)
     set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
 endif ()
 
+file(GLOB_RECURSE SOURCE_FILES "src/**/*.cpp" "src/**/*.h")
 
 add_library(${PROJECT_NAME} STATIC
         include/twelvedata.hpp
-        src/reference/Stocklist.cpp
-        src/reference/Stocklist.h
-        src/reference/export.h
-        src/reference/Forexlist.h
-        src/reference/Forexlist.cpp
-        src/reference/Cryptolist.h
-        src/reference/Cryptolist.cpp
-        src/reference/Fundslist.h
-        src/reference/Fundslist.cpp
+        ${SOURCE_FILES}
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES

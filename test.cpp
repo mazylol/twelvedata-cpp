@@ -12,7 +12,7 @@ std::string httpGet(const char *endpoint, const std::unordered_map<const char *,
     if (!params.empty()) {
         url += "?";
 
-        for (const auto &param: params) {
+        for (const auto &param : params) {
             url += param.first;
             url += "=";
             url += param.second;
@@ -56,17 +56,17 @@ int main() {
         std::cout << fund.symbol << std::endl;
     }*/
 
-    Twelvedata::Reference::FundsList fundsList = Twelvedata::Reference::getFundsList(httpGet, {});
+    /*Twelvedata::Reference::FundsList fundsList = Twelvedata::Reference::getFundsList(httpGet, {});
 
-    std::cout << fundsList.result.count << std::endl;
+    for (const auto &fund : fundsList.result.list) {
+        std::cout << fund.symbol << std::endl;
+    }*/
 
-    int count = 0;
+    Twelvedata::Reference::BondsList bondsList = Twelvedata::Reference::getBondsList(httpGet, {});
 
-    for (const auto &fund: fundsList.result.list) {
-        count += 1;
+    for (const auto &bond : bondsList.result.list) {
+        std::cout << bond.symbol << std::endl;
     }
-
-    std::cout << count << std::endl;
 
     return 0;
 }
