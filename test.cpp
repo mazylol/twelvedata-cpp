@@ -6,7 +6,7 @@
 #include <iostream>
 
 /// The function has to return a string and take a const char* as an argument and an unordered map of strings as an argument
-std::string httpGet(const char *endpoint, std::unordered_map<const char *, const char *> params) {
+std::string httpGet(const char *endpoint, const std::unordered_map<const char *, const char *>& params) {
     std::string url = endpoint;
 
     if (!params.empty()) {
@@ -32,9 +32,9 @@ std::string httpGet(const char *endpoint, std::unordered_map<const char *, const
 int main() {
     dotenv::init();
 
-    Twelvedata::Reference::StocksList stocksList = Twelvedata::Reference::getStocksList(httpGet, {});
+    Twelvedata::Reference::StockList stockList = Twelvedata::Reference::getStockList(httpGet, {});
 
-    for (const auto &stock : stocksList.data) {
+    for (const auto &stock : stockList.data) {
         std::cout << stock.symbol << std::endl;
     }
 

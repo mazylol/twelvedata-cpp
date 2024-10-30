@@ -12,7 +12,12 @@ endif ()
 
 add_library(${PROJECT_NAME} STATIC
         include/twelvedata.hpp
-        src/twelvedata.cpp
+        src/reference/Stocklist.cpp
+        src/reference/Stocklist.h
+        src/reference/export.h
+        src/reference/Forexlist.h
+        src/reference/Forexlist.cpp
+        src/reference/Cryptolist.h
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
