@@ -1,6 +1,6 @@
 # Twelvedata-CPP
 
-This library handles requests to Twelvedata. It is a bring your own http library situation.
+This library handles requests to Twelvedata. You have to bring your own library. This is just a deserializer.
 
 Example using [cpr](https://github.com/libcpr/cpr):
 ```cpp
