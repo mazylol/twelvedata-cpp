@@ -17,6 +17,7 @@ namespace Twelvedata::Reference {
         std::string status;
     };
 
+    [[maybe_unused]]
     ForexPairsList getForexPairsList(
             const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
             std::unordered_map<const char *, const char *> params);
