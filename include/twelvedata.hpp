@@ -4,6 +4,8 @@
 #include <functional>
 #include <string>
 #include <vector>
+#include <nlohmann/json.hpp>
+#include <iostream>
 
 #include "../src/reference/export.h"
 

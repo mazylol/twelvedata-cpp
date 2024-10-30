@@ -3,5 +3,6 @@
 
 #include "Stocklist.h"
 #include "Forexlist.h"
+#include "Cryptolist.h"
 
 #endif //TWELVEDATA_EXPORT_H

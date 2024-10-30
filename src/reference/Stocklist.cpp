@@ -1,8 +1,5 @@
 #include "Stocklist.h"
 
-#include <nlohmann/json.hpp>
-#include <iostream>
-
 Twelvedata::Reference::StockList Twelvedata::Reference::getStockList(
         const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
         std::unordered_map<const char *, const char *> params) {

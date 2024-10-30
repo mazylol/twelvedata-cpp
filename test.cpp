@@ -32,17 +32,23 @@ std::string httpGet(const char *endpoint, const std::unordered_map<const char *,
 int main() {
     dotenv::init();
 
-    Twelvedata::Reference::StockList stockList = Twelvedata::Reference::getStockList(httpGet, {});
+    /*Twelvedata::Reference::StockList stockList = Twelvedata::Reference::getStockList(httpGet, {});
 
     for (const auto &stock : stockList.data) {
         std::cout << stock.symbol << std::endl;
-    }
+    }*/
 
     /*Twelvedata::Reference::ForexPairsList forexPairsList = Twelvedata::Reference::getForexPairsList(httpGet, {});
 
     for (const auto &forexPair : forexPairsList.data) {
         std::cout << forexPair.symbol << std::endl;
     }*/
+
+    Twelvedata::Reference::CryptoList cryptoList = Twelvedata::Reference::getCryptoList(httpGet, {});
+
+    for (const auto &crypto : cryptoList.data) {
+        std::cout << crypto.symbol << std::endl;
+    }
 
     return 0;
 }

@@ -18,6 +18,7 @@ add_library(${PROJECT_NAME} STATIC
         src/reference/Forexlist.h
         src/reference/Forexlist.cpp
         src/reference/Cryptolist.h
+        src/reference/Cryptolist.cpp
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
