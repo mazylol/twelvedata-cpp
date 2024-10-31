@@ -24,7 +24,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 
 include(cmake/CPM.cmake)
 
-CPMAddPackage("gh:nlohmann/json@3.10.5")
+CPMAddPackage("gh:nlohmann/json@3.11.3")
 
 target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
 
