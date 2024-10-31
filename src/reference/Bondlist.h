@@ -1,5 +1,5 @@
-#ifndef TWELVEDATA_BONDSLIST_H
-#define TWELVEDATA_BONDSLIST_H
+#ifndef TWELVEDATA_BONDLIST_H
+#define TWELVEDATA_BONDLIST_H
 
 #include "twelvedata.hpp"
 
@@ -29,4 +29,4 @@ namespace Twelvedata::Reference {
         std::unordered_map<const char *, const char *> params);
 }
 
-#endif // TWELVEDATA_BONDSLIST_H
+#endif // TWELVEDATA_BONDLIST_H

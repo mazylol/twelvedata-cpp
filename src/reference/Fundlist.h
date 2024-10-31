@@ -1,5 +1,5 @@
-#ifndef TWELVEDATA_FUNDSLIST_H
-#define TWELVEDATA_FUNDSLIST_H
+#ifndef TWELVEDATA_FUNDLIST_H
+#define TWELVEDATA_FUNDLIST_H
 
 #include "twelvedata.hpp"
 
@@ -30,4 +30,4 @@ namespace Twelvedata::Reference {
             std::unordered_map<const char *, const char *> params);
 }
 
-#endif //TWELVEDATA_FUNDSLIST_H
+#endif // TWELVEDATA_FUNDLIST_H

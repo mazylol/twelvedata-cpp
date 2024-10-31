@@ -32,7 +32,7 @@ std::string httpGet(const char *endpoint, const std::unordered_map<const char *,
 int main() {
     dotenv::init();
 
-    /*Twelvedata::Reference::StockList stockList = Twelvedata::Reference::getStockList(httpGet, {});
+    /*Twelvedata::Reference::StocksList stockList = Twelvedata::Reference::getStocksList(httpGet, {});
 
     for (const auto &stock : stockList.data) {
         std::cout << stock.symbol << std::endl;
@@ -44,7 +44,7 @@ int main() {
         std::cout << forexPair.symbol << std::endl;
     }*/
 
-    /*Twelvedata::Reference::CryptoList cryptoList = Twelvedata::Reference::getCryptoList(httpGet, {});
+    /*Twelvedata::Reference::CryptocurrenciesList cryptoList = Twelvedata::Reference::getCryptocurrenciesList(httpGet, {});
 
     for (const auto &crypto : cryptoList.data) {
         std::cout << crypto.symbol << std::endl;
@@ -62,10 +62,16 @@ int main() {
         std::cout << fund.symbol << std::endl;
     }*/
 
-    Twelvedata::Reference::BondsList bondsList = Twelvedata::Reference::getBondsList(httpGet, {});
+    /*Twelvedata::Reference::BondsList bondsList = Twelvedata::Reference::getBondsList(httpGet, {});
 
     for (const auto &bond : bondsList.result.list) {
         std::cout << bond.symbol << std::endl;
+    }*/
+
+    Twelvedata::Reference::EtfsList etfList = Twelvedata::Reference::getEtfsList(httpGet, {});
+
+    for (const auto &etf : etfList.data) {
+        std::cout << etf.symbol << std::endl;
     }
 
     return 0;

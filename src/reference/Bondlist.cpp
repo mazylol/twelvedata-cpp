@@ -1,4 +1,5 @@
-#include "Bondslist.h"
+#include "Bondlist.h"
+
 Twelvedata::Reference::BondsList Twelvedata::Reference::getBondsList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc, std::unordered_map<const char *, const char *> params) {
     try {
         std::string text = getFunc("https://api.twelvedata.com/bonds", std::move(params));
