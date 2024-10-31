@@ -68,10 +68,28 @@ int main() {
         std::cout << bond.symbol << std::endl;
     }*/
 
-    Twelvedata::Reference::EtfsList etfList = Twelvedata::Reference::getEtfsList(httpGet, {});
+    /*Twelvedata::Reference::EtfsList etfList = Twelvedata::Reference::getEtfsList(httpGet, {});
 
     for (const auto &etf : etfList.data) {
         std::cout << etf.symbol << std::endl;
+    }*/
+
+    /*Twelvedata::Reference::IndicesList indicesList = Twelvedata::Reference::getIndicesList(httpGet, {});
+
+    for (const auto &index : indicesList.data) {
+        std::cout << index.symbol << std::endl;
+    }*/
+
+    /*Twelvedata::Reference::CommoditiesList commoditiesList = Twelvedata::Reference::getCommoditiesList(httpGet, {});
+
+    for (const auto &commodity : commoditiesList.data) {
+        std::cout << commodity.symbol << std::endl;
+    }*/
+
+    Twelvedata::Reference::Exchanges exchanges = Twelvedata::Reference::getExchanges(httpGet, {});
+
+    for (const auto &exchange : exchanges.data) {
+        std::cout << exchange.name << std::endl;
     }
 
     return 0;
