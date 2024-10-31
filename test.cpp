@@ -1,7 +1,7 @@
-#include <dotenv.h>
 #include <twelvedata.hpp>
 
 #include <cpr/cpr.h>
+#include <dotenvloader.hpp>
 
 #include <iostream>
 
@@ -30,7 +30,7 @@ std::string httpGet(const char *endpoint, const std::unordered_map<const char *,
 }
 
 int main() {
-    dotenv::init();
+    dotenvloader::load();
 
     /*Twelvedata::Reference::StocksList stockList = Twelvedata::Reference::getStocksList(httpGet, {});
 

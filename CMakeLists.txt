@@ -35,12 +35,11 @@ if(BUILD_TESTING)
     set(ENV_FILE_DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/.env)
     configure_file(${ENV_FILE_SOURCE} ${ENV_FILE_DESTINATION} COPYONLY)
 
-
-    CPMAddPackage("gh:laserpants/dotenv-cpp#432def2fb9c2a5e51e6d491f35f2e8f35fa900b0")
+    CPMAddPackage("gh:mazylol/dotenvloader@1.0")
     CPMAddPackage("gh:libcpr/cpr#1.10.5") # subject to change
 
     add_executable(${PROJECT_NAME}_test test.cpp)
-    target_link_libraries(${PROJECT_NAME}_test PRIVATE ${PROJECT_NAME} dotenv cpr::cpr)
+    target_link_libraries(${PROJECT_NAME}_test PRIVATE ${PROJECT_NAME} dotenvloader cpr::cpr)
 
     set_target_properties(${PROJECT_NAME}_test PROPERTIES
             CXX_STANDARD 20
