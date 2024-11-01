@@ -18,11 +18,11 @@ namespace Twelvedata::Reference {
     struct SymbolSearchList {
         std::vector<SymbolSearchItem> data;
         std::string status;
-    };
 
-    SymbolSearchList getSymbolSearchList(
-        const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
-        std::unordered_map<const char *, const char *> params);
+        [[maybe_unused]]
+        SymbolSearchList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+                         std::unordered_map<const char *, const char *> params);
+    };
 }
 
 #endif

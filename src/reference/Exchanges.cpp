@@ -1,6 +1,6 @@
 #include "Exchanges.h"
 
-Twelvedata::Reference::Exchanges Twelvedata::Reference::getExchanges(
+Twelvedata::Reference::Exchanges::Exchanges(
     const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
     std::unordered_map<const char *, const char *> params) {
     try {
@@ -8,9 +8,7 @@ Twelvedata::Reference::Exchanges Twelvedata::Reference::getExchanges(
 
         nlohmann::json object = nlohmann::json::parse(text);
 
-        Exchanges exchanges;
-
-        exchanges.status = object.at("status").get<std::string>();
+        this->status = object.at("status").get<std::string>();
 
         for (const auto &dataJson : object.at("data")) {
             ExchangeListItem listItem;
@@ -20,12 +18,9 @@ Twelvedata::Reference::Exchanges Twelvedata::Reference::getExchanges(
             listItem.country = dataJson.at("country").get<std::string>();
             listItem.timezone = dataJson.at("timezone").get<std::string>();
 
-            exchanges.data.push_back(listItem);
+            this->data.push_back(listItem);
         }
-
-        return exchanges;
     } catch (const std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
-        return {};
     }
 }

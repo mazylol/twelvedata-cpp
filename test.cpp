@@ -34,67 +34,61 @@ std::string httpGet(const char *endpoint, const std::unordered_map<const char *,
 int main() {
     dotenvloader::load();
 
-    /*Twelvedata::Reference::StocksList stockList = Twelvedata::Reference::getStocksList(httpGet, {});
+    /*auto stockList = Twelvedata::Reference::StocksList(httpGet, {});
 
     for (const auto &stock : stockList.data) {
         std::cout << stock.symbol << std::endl;
     }*/
 
-    /*Twelvedata::Reference::ForexPairsList forexPairsList = Twelvedata::Reference::getForexPairsList(httpGet, {});
+    /*auto forexPairsList = Twelvedata::Reference::ForexPairsList(httpGet, {});
 
     for (const auto &forexPair : forexPairsList.data) {
         std::cout << forexPair.symbol << std::endl;
     }*/
 
-    /*Twelvedata::Reference::CryptocurrenciesList cryptoList = Twelvedata::Reference::getCryptocurrenciesList(httpGet, {});
+    /*auto cryptoList = Twelvedata::Reference::CryptocurrenciesList(httpGet, {});
 
     for (const auto &crypto : cryptoList.data) {
         std::cout << crypto.symbol << std::endl;
     }*/
 
-    /*Twelvedata::Reference::FundsList fundsList = Twelvedata::Reference::getFundsList(httpGet, {});
+    /*auto fundsList = Twelvedata::Reference::FundsList(httpGet, {});
 
     for (const auto &fund : fundsList.result.list) {
         std::cout << fund.symbol << std::endl;
     }*/
 
-    /*Twelvedata::Reference::FundsList fundsList = Twelvedata::Reference::getFundsList(httpGet, {});
-
-    for (const auto &fund : fundsList.result.list) {
-        std::cout << fund.symbol << std::endl;
-    }*/
-
-    /*Twelvedata::Reference::BondsList bondsList = Twelvedata::Reference::getBondsList(httpGet, {});
+    /*auto bondsList = Twelvedata::Reference::BondsList(httpGet, {});
 
     for (const auto &bond : bondsList.result.list) {
         std::cout << bond.symbol << std::endl;
     }*/
 
-    /*Twelvedata::Reference::EtfsList etfList = Twelvedata::Reference::getEtfsList(httpGet, {});
+   /*auto etfList = Twelvedata::Reference::EtfsList(httpGet, {});
 
     for (const auto &etf : etfList.data) {
         std::cout << etf.symbol << std::endl;
     }*/
 
-    /*Twelvedata::Reference::IndicesList indicesList = Twelvedata::Reference::getIndicesList(httpGet, {});
+    /*auto indicesList = Twelvedata::Reference::IndicesList(httpGet, {});
 
     for (const auto &index : indicesList.data) {
         std::cout << index.symbol << std::endl;
     }*/
 
-    /*Twelvedata::Reference::CommoditiesList commoditiesList = Twelvedata::Reference::getCommoditiesList(httpGet, {});
+    /*auto commoditiesList = Twelvedata::Reference::CommoditiesList(httpGet, {});
 
     for (const auto &commodity : commoditiesList.data) {
         std::cout << commodity.symbol << std::endl;
     }*/
 
-    /*Twelvedata::Reference::Exchanges exchanges = Twelvedata::Reference::getExchanges(httpGet, {});
+    /*auto exchanges = Twelvedata::Reference::Exchanges(httpGet, {});
 
     for (const auto &exchange : exchanges.data) {
         std::cout << exchange.name << std::endl;
     }*/
 
-    /*Twelvedata::Reference::CryptocurrencyExchanges exchanges = Twelvedata::Reference::getCryptocurrencyExchanges(httpGet, {});
+    /*auto exchanges = Twelvedata::Reference::CryptocurrencyExchanges(httpGet, {});
 
     for (const auto &exchange : exchanges.data) {
         std::cout << exchange.name << std::endl;
@@ -106,28 +100,28 @@ int main() {
         std::cout << market.name << std::endl;
     }*/
 
-    /*Twelvedata::Reference::InstrumentType instrumentType = Twelvedata::Reference::getInstrumentType(httpGet, {});
+    /*auto instrumentType = Twelvedata::Reference::InstrumentType(httpGet, {});
 
     for (const auto &instrument : instrumentType.result) {
         std::cout << instrument << std::endl;
     }*/
 
-    /*Twelvedata::Reference::CountriesList countriesList = Twelvedata::Reference::getCountriesList(httpGet, {});
+    /*auto countriesList = Twelvedata::Reference::CountriesList(httpGet, {});
 
     for (const auto &country : countriesList.data) {
         std::cout << country.name << std::endl;
     }*/
 
-    /*Twelvedata::Reference::EarliestTimestamp earliestTimestamp = Twelvedata::Reference::getEarliestTimestamp(httpGet, {{"symbol", "AAPL"}, {"interval", "1min"}});
+    /*auto earliestTimestamp = Twelvedata::Reference::EarliestTimestamp(httpGet, {{"symbol", "AAPL"}, {"interval", "1min"}});
 
     std::cout << earliestTimestamp.datetime << std::endl;
     std::cout << earliestTimestamp.unix_time << std::endl;*/
 
-    /*Twelvedata::Reference::SymbolSearchList symbolSearchList = Twelvedata::Reference::getSymbolSearchList(httpGet, {{"symbol", "AAPL"}});
+    auto symbolSearchList = Twelvedata::Reference::SymbolSearchList(httpGet, {{"symbol", "AAPL"}});
 
     for (const auto &symbol : symbolSearchList.data) {
         std::cout << symbol.symbol << std::endl;
-    }*/
+    }
 
     /*auto timeSeries = Twelvedata::Core::TimeSeries(httpGet, {{"symbol", "AAPL"}, {"interval", "1min"}});
 

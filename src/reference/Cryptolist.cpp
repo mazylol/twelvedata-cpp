@@ -2,7 +2,7 @@
 
 #include <utility>
 
-Twelvedata::Reference::CryptocurrenciesList Twelvedata::Reference::getCryptocurrenciesList(
+Twelvedata::Reference::CryptocurrenciesList::CryptocurrenciesList(
         const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
         std::unordered_map<const char *, const char *> params) {
     try {
@@ -10,10 +10,8 @@ Twelvedata::Reference::CryptocurrenciesList Twelvedata::Reference::getCryptocurr
 
         nlohmann::json object = nlohmann::json::parse(text);
 
-        CryptocurrenciesList cryptoList;
-
-        cryptoList.count = object.at("count").get<int>();
-        cryptoList.status = object.at("status").get<std::string>();
+        this->count = object.at("count").get<int>();
+        this->status = object.at("status").get<std::string>();
 
         for (const auto &dataJson: object.at("data")) {
             CryptocurrenciesListItem listItem;
@@ -26,12 +24,9 @@ Twelvedata::Reference::CryptocurrenciesList Twelvedata::Reference::getCryptocurr
                 listItem.available_exchanges.push_back(exchange.get<std::string>());
             }
 
-            cryptoList.data.push_back(listItem);
+            this->data.push_back(listItem);
         }
-
-        return cryptoList;
     } catch (const std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
-        return {};
     }
 }

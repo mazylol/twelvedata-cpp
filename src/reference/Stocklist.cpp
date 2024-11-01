@@ -1,6 +1,6 @@
 #include "Stocklist.h"
 
-Twelvedata::Reference::StocksList Twelvedata::Reference::getStocksList(
+Twelvedata::Reference::StocksList::StocksList(
         const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
         std::unordered_map<const char *, const char *> params) {
     try {
@@ -8,10 +8,8 @@ Twelvedata::Reference::StocksList Twelvedata::Reference::getStocksList(
 
         nlohmann::json object = nlohmann::json::parse(text);
 
-        Twelvedata::Reference::StocksList stockList;
-
-        stockList.status = object.at("status").get<std::string>();
-        stockList.count = object.at("count").get<int>();
+        this->status = object.at("status").get<std::string>();
+        this->count = object.at("count").get<int>();
 
         for (const auto &dataJson: object.at("data")) {
             Twelvedata::Reference::StockListItem listItem;
@@ -29,12 +27,9 @@ Twelvedata::Reference::StocksList Twelvedata::Reference::getStocksList(
                 listItem.access = Twelvedata::Reference::Access{"", ""};
             }
 
-            stockList.data.push_back(listItem);
+            this->data.push_back(listItem);
         }
-
-        return stockList;
     } catch (const std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
-        return {};
     }
 }

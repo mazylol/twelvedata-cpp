@@ -18,13 +18,11 @@ namespace Twelvedata::Reference {
         std::vector<EtfListItem> data;
         int count;
         std::string status;
+
+        [[maybe_unused]]
+        EtfsList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+                 std::unordered_map<const char *, const char *> params);
     };
-
-    [[maybe_unused]]
-    EtfsList getEtfsList(
-        const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
-        std::unordered_map<const char *, const char *> params);
-
 }
 
 #endif // TWELVEDATA_ETFLIST_H

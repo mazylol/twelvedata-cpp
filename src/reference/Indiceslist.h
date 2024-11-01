@@ -17,12 +17,11 @@ namespace Twelvedata::Reference {
         std::vector<IndexListItem> data;
         int count;
         std::string status;
-    };
 
-    [[maybe_unused]]
-    IndicesList getIndicesList(
-        const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
-        std::unordered_map<const char *, const char *> params);
+        [[maybe_unused]]
+        IndicesList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+                    std::unordered_map<const char *, const char *> params);
+    };
 }
 
 #endif // TWELVEDATA_INDICESLIST_H

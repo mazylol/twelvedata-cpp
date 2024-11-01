@@ -1,6 +1,6 @@
 #include "Countries.h"
 
-Twelvedata::Reference::CountriesList Twelvedata::Reference::getCountriesList(
+Twelvedata::Reference::CountriesList::CountriesList(
     const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
     std::unordered_map<const char *, const char *> params) {
     try {
@@ -9,8 +9,6 @@ Twelvedata::Reference::CountriesList Twelvedata::Reference::getCountriesList(
         std::cout << text << std::endl;
 
         nlohmann::json object = nlohmann::json::parse(text);
-
-        CountriesList countriesList;
 
         for (const auto &dataJson : object.at("data")) {
             CountryListItem listItem;
@@ -23,12 +21,9 @@ Twelvedata::Reference::CountriesList Twelvedata::Reference::getCountriesList(
             listItem.capital = dataJson.at("capital").get<std::string>();
             listItem.currency = dataJson.at("currency").get<std::string>();
 
-            countriesList.data.push_back(listItem);
+            this->data.push_back(listItem);
         }
-
-        return countriesList;
     } catch (const std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
-        return {};
     }
 }

@@ -21,12 +21,11 @@ namespace Twelvedata::Reference {
     struct BondsList {
         BondResult result;
         std::string status;
-    };
 
-    [[maybe_unused]]
-    BondsList getBondsList(
-        const std::function<std::string(const char *, std::unordered_map < const char *, const char *>)> &getFunc,
-        std::unordered_map<const char *, const char *> params);
+        [[maybe_unused]]
+        BondsList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+                  std::unordered_map<const char *, const char *> params);
+    };
 }
 
 #endif // TWELVEDATA_BONDLIST_H

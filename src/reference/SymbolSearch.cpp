@@ -1,14 +1,12 @@
 #include "SymbolSearch.h"
 
-Twelvedata::Reference::SymbolSearchList Twelvedata::Reference::getSymbolSearchList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc, std::unordered_map<const char *, const char *> params) {
+Twelvedata::Reference::SymbolSearchList::SymbolSearchList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc, std::unordered_map<const char *, const char *> params) {
     try {
         std::string text = getFunc("https://api.twelvedata.com/symbol_search", std::move(params));
 
         nlohmann::json object = nlohmann::json::parse(text);
 
-        SymbolSearchList symbolSearchList;
-
-        symbolSearchList.status = object.at("status").get<std::string>();
+        this->status = object.at("status").get<std::string>();
 
         for (const auto &dataJson : object.at("data")) {
             SymbolSearchItem listItem;
@@ -22,12 +20,9 @@ Twelvedata::Reference::SymbolSearchList Twelvedata::Reference::getSymbolSearchLi
             listItem.country = dataJson.at("country").get<std::string>();
             listItem.currency = dataJson.at("currency").get<std::string>();
 
-            symbolSearchList.data.push_back(listItem);
+            this->data.push_back(listItem);
         }
-
-        return symbolSearchList;
     } catch (const std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
-        return {};
     }
 }

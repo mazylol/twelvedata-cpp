@@ -19,17 +19,16 @@ namespace Twelvedata::Reference {
         Access access;
     };
 
-    struct StocksList { ;
+    struct StocksList {
+        ;
         std::vector<StockListItem> data;
         int count;
         std::string status;
-    };
 
-    [[maybe_unused]]
-    StocksList getStocksList(
-            const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
-            std::unordered_map<const char *, const char *> params);
+        [[maybe_unused]]
+        StocksList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+                   std::unordered_map<const char *, const char *> params);
+    };
 };
 
-
-#endif //TWELVEDATA_STOCKLIST_H
+#endif // TWELVEDATA_STOCKLIST_H

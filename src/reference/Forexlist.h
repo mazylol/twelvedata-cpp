@@ -15,12 +15,11 @@ namespace Twelvedata::Reference {
         std::vector<ForexPairListItem> data;
         int count;
         std::string status;
-    };
 
-    [[maybe_unused]]
-    ForexPairsList getForexPairsList(
-            const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
-            std::unordered_map<const char *, const char *> params);
+        [[maybe_unused]]
+        ForexPairsList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+                       std::unordered_map<const char *, const char *> params);
+    };
 }
 
-#endif //TWELVEDATA_FOREXLIST_H
+#endif // TWELVEDATA_FOREXLIST_H

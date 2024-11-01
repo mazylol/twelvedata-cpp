@@ -1,6 +1,6 @@
 #include "Fundlist.h"
 
-Twelvedata::Reference::FundsList Twelvedata::Reference::getFundsList(
+Twelvedata::Reference::FundsList::FundsList(
     const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
     std::unordered_map<const char *, const char *> params) {
     try {
@@ -8,9 +8,7 @@ Twelvedata::Reference::FundsList Twelvedata::Reference::getFundsList(
 
         nlohmann::json object = nlohmann::json::parse(text);
 
-        FundsList fundsList;
-
-        fundsList.status = object.at("status").get<std::string>();
+        this->status = object.at("status").get<std::string>();
 
         FundResult fundResult;
 
@@ -30,11 +28,8 @@ Twelvedata::Reference::FundsList Twelvedata::Reference::getFundsList(
             fundResult.list.push_back(listItem);
         }
 
-        fundsList.result = fundResult;
-
-        return fundsList;
+        this->result = fundResult;
     } catch (const std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
-        return {};
     }
 }

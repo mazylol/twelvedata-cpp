@@ -14,12 +14,11 @@ namespace Twelvedata::Reference {
     struct Exchanges {
         std::vector<ExchangeListItem> data;
         std::string status;
-    };
 
-    [[maybe_unused]]
-    Exchanges getExchanges(
-        const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
-        std::unordered_map<const char *, const char *> params);
+        [[maybe_unused]]
+        Exchanges(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+                  std::unordered_map<const char *, const char *> params);
+    };
 }
 
 #endif // TWELVEDATA_EXCHANGES_H

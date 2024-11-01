@@ -11,12 +11,11 @@ namespace Twelvedata::Reference {
     struct CryptocurrencyExchanges {
         std::vector<CryptocurrencyExchangeListItem> data;
         std::string status;
-    };
 
-    [[maybe_unused]]
-    CryptocurrencyExchanges getCryptocurrencyExchanges(
-        const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
-        std::unordered_map<const char *, const char *> params);
+        [[maybe_unused]]
+        CryptocurrencyExchanges(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+                                std::unordered_map<const char *, const char *> params);
+    };
 }
 
 #endif // TWELVEDATA_CRYPTOCURRENCYEXCHANGES_H
