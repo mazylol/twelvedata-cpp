@@ -16,4 +16,4 @@ namespace Twelvedata::Core {
         std::unordered_map<const char *, const char *> params);
 }
 
-#endif
+#endif // TWELVEDATA_EXCHANGERATE_H

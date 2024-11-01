@@ -141,5 +141,17 @@ int main() {
 
     std::cout << currencyConversion.amount << std::endl;*/
 
+    /*Twelvedata::Core::Quote quote = Twelvedata::Core::getQuote(httpGet, {{"symbol", "AAPL"}});
+
+    std::cout << quote.symbol << std::endl;*/
+
+    /*Twelvedata::Core::RealTimePrice realTimePrice = Twelvedata::Core::getRealTimePrice(httpGet, {{"symbol", "AAPL"}});
+
+    std::cout << realTimePrice.price << std::endl;*/
+
+    Twelvedata::Core::EndOfDayPrice endOfDayPrice = Twelvedata::Core::getEndOfDayPrice(httpGet, {{"symbol", "AAPL"}});
+
+    std::cout << endOfDayPrice.close << std::endl;
+
     return 0;
 }

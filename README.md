@@ -78,9 +78,9 @@ good conscience do it myself as I do not have paid access and cannot test it.
     - [x] Time Series `/time_series`
     - [x] Exchange Rate `/exchange_rate`
     - [x] Currency Conversion `/currency_conversion`
-    - [ ] Quote `/quote`
-    - [ ] Price `/price`
-    - [ ] End of Day Price `/eod`
+    - [x] Quote `/quote`
+    - [x] Price `/price`
+    - [x] End of Day Price `/eod`
     - [ ] Market Movers `/market_movers/{stocks,etf,mutal_funds,forex,crypto}` (Paid)
 
 ## Note

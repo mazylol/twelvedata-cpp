@@ -17,4 +17,4 @@ namespace Twelvedata::Core {
         std::unordered_map<const char *, const char *> params);
 }
 
-#endif
+#endif // TWELEVEDATA_CURRENCYCONVERSION_H
