@@ -12,5 +12,9 @@
 #include "Exchanges.h"
 #include "Cryptocurrencyexchanges.h"
 #include "MarketState.h"
+#include "InstrumentType.h"
+#include "Countries.h"
+#include "EarliestTimestamp.h"
+#include "SymbolSearch.h"
 
 #endif //TWELVEDATA_EXPORT_H

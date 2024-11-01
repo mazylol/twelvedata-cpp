@@ -63,11 +63,11 @@ All the paid endpoints are not covered. If you want to use them, you will have t
   - [ ] Exchange schedule `/exchange_schedule` (Paid)
   - [x] Cryptocurrency Exchanges `/cryptocurrency_exchanges`
   - [x] Market State `/market_state`
-  - [ ] Instrument Type `/instrument_type`
-  - [ ] Countries `/countries`
+  - [x] Instrument Type `/instrument_type`
+  - [x] Countries `/countries`
   - [ ] Technical Indicators Interface `/technical_indicators` (No idea how to implement, JSON structure is not standardized)
-  - [ ] Earliest Timestamp `/earliest_timestamp`
-  - [ ] Symbol Search `/symbol_search`
+  - [x] Earliest Timestamp `/earliest_timestamp`
+  - [x] Symbol Search `/symbol_search`
 
 ## Note
 I HIGHLY recommend that you use parameters in your queries. For example, the /funds endpoint returns, at the time of writing this, 299364 entries. If you don't use parameters, you will get all of them. This is a waste of bandwidth and will take a considerable amount of time to deserialize. Use parameters to filter the results to what you need.

@@ -100,11 +100,34 @@ int main() {
         std::cout << exchange.name << std::endl;
     }*/
 
-    std::vector<Twelvedata::Reference::MarketStateItem> marketState = Twelvedata::Reference::getMarketState(httpGet, {});
+    /*std::vector<Twelvedata::Reference::MarketStateItem> marketState = Twelvedata::Reference::getMarketState(httpGet, {});
 
     for (const auto &market : marketState) {
         std::cout << market.name << std::endl;
-    }
+    }*/
+
+    /*Twelvedata::Reference::InstrumentType instrumentType = Twelvedata::Reference::getInstrumentType(httpGet, {});
+
+    for (const auto &instrument : instrumentType.result) {
+        std::cout << instrument << std::endl;
+    }*/
+
+    /*Twelvedata::Reference::CountriesList countriesList = Twelvedata::Reference::getCountriesList(httpGet, {});
+
+    for (const auto &country : countriesList.data) {
+        std::cout << country.name << std::endl;
+    }*/
+
+    /*Twelvedata::Reference::EarliestTimestamp earliestTimestamp = Twelvedata::Reference::getEarliestTimestamp(httpGet, {{"symbol", "AAPL"}, {"interval", "1min"}});
+
+    std::cout << earliestTimestamp.datetime << std::endl;
+    std::cout << earliestTimestamp.unix_time << std::endl;*/
+
+    /*Twelvedata::Reference::SymbolSearchList symbolSearchList = Twelvedata::Reference::getSymbolSearchList(httpGet, {{"symbol", "AAPL"}});
+
+    for (const auto &symbol : symbolSearchList.data) {
+        std::cout << symbol.symbol << std::endl;
+    }*/
 
     return 0;
 }
