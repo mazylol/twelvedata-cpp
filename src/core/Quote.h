@@ -33,6 +33,9 @@ namespace Twelvedata::Core {
         std::string average_volume;
         bool is_market_open;
         FiftyTwoWeek fifty_two_week;
+
+        [[maybe_unused]]
+        Quote(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc, std::unordered_map<const char *, const char *> params);
     };
 
     [[maybe_unused]]

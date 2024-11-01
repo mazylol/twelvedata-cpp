@@ -129,29 +129,29 @@ int main() {
         std::cout << symbol.symbol << std::endl;
     }*/
 
-    /*Twelvedata::Core::TimeSeries timeSeries = Twelvedata::Core::getTimeSeries(httpGet, {{"symbol", "AAPL"}, {"interval", "1min"}});
+    /*auto timeSeries = Twelvedata::Core::TimeSeries(httpGet, {{"symbol", "AAPL"}, {"interval", "1min"}});
 
     std::cout << timeSeries.meta.symbol << std::endl;*/
 
-    /*Twelvedata::Core::ExchangeRate exchangeRate = Twelvedata::Core::getExchangeRate(httpGet, {{"symbol", "USD/JPY"}});
+    /*auto exchangeRate = Twelvedata::Core::ExchangeRate(httpGet, {{"symbol", "USD/JPY"}});
 
     std::cout << exchangeRate.symbol << std::endl;*/
 
-    /*Twelvedata::Core::CurrencyConversion currencyConversion = Twelvedata::Core::getCurrencyConversion(httpGet, {{"symbol", "USD/EUR"}, {"amount", "100"}});
+    /*auto currencyConversion = Twelvedata::Core::CurrencyConversion(httpGet, {{"symbol", "USD/EUR"}, {"amount", "100"}});
 
     std::cout << currencyConversion.amount << std::endl;*/
 
-    /*Twelvedata::Core::Quote quote = Twelvedata::Core::getQuote(httpGet, {{"symbol", "AAPL"}});
+    /*auto quote = Twelvedata::Core::Quote(httpGet, {{"symbol", "AAPL"}});
 
     std::cout << quote.symbol << std::endl;*/
 
-    /*Twelvedata::Core::RealTimePrice realTimePrice = Twelvedata::Core::getRealTimePrice(httpGet, {{"symbol", "AAPL"}});
+    /*auto realTimePrice = Twelvedata::Core::RealTimePrice(httpGet, {{"symbol", "AAPL"}});
 
     std::cout << realTimePrice.price << std::endl;*/
 
-    Twelvedata::Core::EndOfDayPrice endOfDayPrice = Twelvedata::Core::getEndOfDayPrice(httpGet, {{"symbol", "AAPL"}});
+    /*auto endOfDayPrice = Twelvedata::Core::EndOfDayPrice(httpGet, {{"symbol", "AAPL"}});
 
-    std::cout << endOfDayPrice.close << std::endl;
+    std::cout << endOfDayPrice.close << std::endl;*/
 
     return 0;
 }

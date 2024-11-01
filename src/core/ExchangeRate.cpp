@@ -1,6 +1,6 @@
 #include "ExchangeRate.h"
 
-Twelvedata::Core::ExchangeRate Twelvedata::Core::getExchangeRate(
+Twelvedata::Core::ExchangeRate::ExchangeRate(
     const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
     std::unordered_map<const char *, const char *> params) {
     try {
@@ -8,15 +8,10 @@ Twelvedata::Core::ExchangeRate Twelvedata::Core::getExchangeRate(
 
         nlohmann::json object = nlohmann::json::parse(text);
 
-        ExchangeRate exchangeRate;
-
-        exchangeRate.symbol = object.at("symbol").get<std::string>();
-        exchangeRate.rate = object.at("rate").get<double>();
-        exchangeRate.timestamp = object.at("timestamp").get<int>();
-
-        return exchangeRate;
+        this->symbol = object.at("symbol").get<std::string>();
+        this->rate = object.at("rate").get<double>();
+        this->timestamp = object.at("timestamp").get<int>();
     } catch (const std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
-        return {};
     }
 }

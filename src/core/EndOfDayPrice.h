@@ -11,11 +11,10 @@ namespace Twelvedata::Core {
         std::string currency;
         std::string datetime;
         std::string close;
+
+        [[maybe_unused]]
+        EndOfDayPrice(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc, std::unordered_map<const char *, const char *> params);
     };
-
-    [[maybe_unused]]
-    EndOfDayPrice getEndOfDayPrice(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc, std::unordered_map<const char *, const char *> params);
-
 }
 
 #endif // TWELVEDATA_ENDOFDAYPRICE_H

@@ -9,12 +9,11 @@ namespace Twelvedata::Core {
         double rate;
         double amount;
         int timestamp;
-    };
 
-    [[maybe_unused]]
-    CurrencyConversion getCurrencyConversion(
-        const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
-        std::unordered_map<const char *, const char *> params);
+        [[maybe_unused]]
+        CurrencyConversion(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+                           std::unordered_map<const char *, const char *> params);
+    };
 }
 
 #endif // TWELEVEDATA_CURRENCYCONVERSION_H

@@ -8,12 +8,12 @@ namespace Twelvedata::Core {
         std::string symbol;
         double rate;
         int timestamp;
-    };
 
-    [[maybe_unused]]
-    ExchangeRate getExchangeRate(
-        const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
-        std::unordered_map<const char *, const char *> params);
+        [[maybe_unused]]
+        ExchangeRate(
+            const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+            std::unordered_map<const char *, const char *> params);
+    };
 }
 
 #endif // TWELVEDATA_EXCHANGERATE_H

@@ -27,12 +27,12 @@ namespace Twelvedata::Core {
         TimeSeriesMeta meta;
         std::vector<TimeSeriesValue> values;
         std::string status;
-    };
 
-    [[maybe_unused]]
-    TimeSeries getTimeSeries(
-        const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
-        std::unordered_map<const char *, const char *> params);
+        [[maybe_unused]]
+        TimeSeries(
+            const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+            std::unordered_map<const char *, const char *> params);
+    };
 }
 
 #endif // TWELVEDATA_TIMESERIES_H
