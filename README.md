@@ -11,20 +11,27 @@ This library handles requests to [twelvedata](https://twelvedata.com). You have 
 #include <string>
 #include <unordered_map>
 
-std::string httpGet(const char *endpoint, std::unordered_map<const char *, const char *> params) {
+std::string httpGet(const char *endpoint, const std::unordered_map<const char *, const char *> &params) {
     std::string url = endpoint;
 
     if (!params.empty()) {
         url += "?";
 
         for (const auto &param : params) {
-            url += param.first + "=" + param.second + "&";
+            url += param.first;
+            url += "=";
+            url += param.second;
+            url += "&";
         }
 
         url.pop_back();
     }
 
-    std::string text = cpr::Get(cpr::Url{url}, cpr::Header{{"Authorization", <your-token-here>}}).text;
+    std::cout << url << std::endl;
+
+    std::string apiKeyValue = "apikey " + std::string(std::getenv("TWELVEDATA_API_KEY"));
+
+    std::string text = cpr::Get(cpr::Url{url}, cpr::Header{{"Authorization", apiKeyValue}}).text;
 
     return text;
 }
