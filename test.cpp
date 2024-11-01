@@ -24,7 +24,9 @@ std::string httpGet(const char *endpoint, const std::unordered_map<const char *,
 
     std::cout << url << std::endl;
 
-    std::string text = cpr::Get(cpr::Url{url}, cpr::Header{{"Authorization", std::getenv("TWELVEDATA_API_KEY")}}).text;
+    std::string apiKeyValue = "apikey " + std::string(std::getenv("TWELVEDATA_API_KEY"));
+
+    std::string text = cpr::Get(cpr::Url{url}, cpr::Header{{"Authorization", apiKeyValue}}).text;
 
     return text;
 }
@@ -86,10 +88,22 @@ int main() {
         std::cout << commodity.symbol << std::endl;
     }*/
 
-    Twelvedata::Reference::Exchanges exchanges = Twelvedata::Reference::getExchanges(httpGet, {});
+    /*Twelvedata::Reference::Exchanges exchanges = Twelvedata::Reference::getExchanges(httpGet, {});
 
     for (const auto &exchange : exchanges.data) {
         std::cout << exchange.name << std::endl;
+    }*/
+
+    /*Twelvedata::Reference::CryptocurrencyExchanges exchanges = Twelvedata::Reference::getCryptocurrencyExchanges(httpGet, {});
+
+    for (const auto &exchange : exchanges.data) {
+        std::cout << exchange.name << std::endl;
+    }*/
+
+    std::vector<Twelvedata::Reference::MarketStateItem> marketState = Twelvedata::Reference::getMarketState(httpGet, {});
+
+    for (const auto &market : marketState) {
+        std::cout << market.name << std::endl;
     }
 
     return 0;

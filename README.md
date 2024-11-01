@@ -54,8 +54,8 @@ All the paid endpoints are not covered. If you want to use them, you will have t
   - [ ] Cross listings `/cross_listings` (Paid)
   - [x] Exchanges `/exchanges`
   - [ ] Exchange schedule `/exchange_schedule` (Paid)
-  - [ ] Cryptocurrency Exchanges `/cryptocurrency_exchanges`
-  - [ ] Market State `/market_state`
+  - [x] Cryptocurrency Exchanges `/cryptocurrency_exchanges`
+  - [x] Market State `/market_state`
   - [ ] Instrument Type `/instrument_type`
   - [ ] Countries `/countries`
   - [ ] Technical Indicators Interface `/technical_indicators` (No idea how to implement, JSON structure is not standardized)

@@ -10,5 +10,7 @@
 #include "Indiceslist.h"
 #include "Stocklist.h"
 #include "Exchanges.h"
+#include "Cryptocurrencyexchanges.h"
+#include "MarketState.h"
 
 #endif //TWELVEDATA_EXPORT_H
