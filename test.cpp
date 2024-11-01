@@ -129,5 +129,17 @@ int main() {
         std::cout << symbol.symbol << std::endl;
     }*/
 
+    /*Twelvedata::Core::TimeSeries timeSeries = Twelvedata::Core::getTimeSeries(httpGet, {{"symbol", "AAPL"}, {"interval", "1min"}});
+
+    std::cout << timeSeries.meta.symbol << std::endl;*/
+
+    /*Twelvedata::Core::ExchangeRate exchangeRate = Twelvedata::Core::getExchangeRate(httpGet, {{"symbol", "USD/JPY"}});
+
+    std::cout << exchangeRate.symbol << std::endl;*/
+
+    /*Twelvedata::Core::CurrencyConversion currencyConversion = Twelvedata::Core::getCurrencyConversion(httpGet, {{"symbol", "USD/EUR"}, {"amount", "100"}});
+
+    std::cout << currencyConversion.amount << std::endl;*/
+
     return 0;
 }

@@ -1,5 +1,5 @@
-#ifndef TWELVEDATA_EXPORT_H
-#define TWELVEDATA_EXPORT_H
+#ifndef TWELVEDATA_EXPORT_REFERENCE_H
+#define TWELVEDATA_EXPORT_REFERENCE_H
 
 #include "Bondlist.h"
 #include "Commoditieslist.h"
@@ -17,4 +17,4 @@
 #include "EarliestTimestamp.h"
 #include "SymbolSearch.h"
 
-#endif //TWELVEDATA_EXPORT_H
+#endif //TWELVEDATA_EXPORT_REFERENCE_H
