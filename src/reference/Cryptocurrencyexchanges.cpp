@@ -1,4 +1,4 @@
-#include "Cryptocurrencyexchanges.h"
+#include "twelvedata.hpp"
 
 Twelvedata::Reference::CryptocurrencyExchanges::CryptocurrencyExchanges(
     const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,

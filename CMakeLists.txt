@@ -6,12 +6,12 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Option to use ccache for faster builds
 option(USE_CCACHE "Use ccache for compilation" ON)
-if(USE_CCACHE)
+if (USE_CCACHE)
     find_program(CCACHE_PROGRAM ccache)
-    if(CCACHE_PROGRAM)
+    if (CCACHE_PROGRAM)
         set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
-    endif()
-endif()
+    endif ()
+endif ()
 
 # Create a static library
 add_library(${PROJECT_NAME} STATIC)
@@ -72,7 +72,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 )
 
 # Configuration for testing
-if(BUILD_TESTING)
+if (BUILD_TESTING)
     # Configure environment file for testing
     set(ENV_FILE_SOURCE ${CMAKE_SOURCE_DIR}/.env)
     set(ENV_FILE_DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/.env)
@@ -88,16 +88,16 @@ if(BUILD_TESTING)
 
     # Set properties for the test executable
     set_common_properties(${PROJECT_NAME}_test)
-endif()
+endif ()
 
-# Installation settings
+# Installation configuration
 install(TARGETS ${PROJECT_NAME}
         EXPORT ${PROJECT_NAME}Targets
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib
 )
 
-# Install header files
+# Install header files under /usr/local/include/twelvedata
 install(DIRECTORY include/
         DESTINATION include
         FILES_MATCHING PATTERN "*.hpp"

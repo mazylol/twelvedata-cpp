@@ -1,4 +1,4 @@
-#include "CurrencyConversion.h"
+#include "twelvedata.hpp"
 
 Twelvedata::Core::CurrencyConversion::CurrencyConversion(
     const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,

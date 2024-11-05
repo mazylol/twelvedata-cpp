@@ -1,4 +1,4 @@
-#include "Stocklist.h"
+#include "twelvedata.hpp"
 
 Twelvedata::Reference::StocksList::StocksList(
         const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,

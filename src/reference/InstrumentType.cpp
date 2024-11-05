@@ -1,4 +1,4 @@
-#include "InstrumentType.h"
+#include "twelvedata.hpp"
 
 Twelvedata::Reference::InstrumentType::InstrumentType(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc, std::unordered_map<const char *, const char *> params) {
     try {

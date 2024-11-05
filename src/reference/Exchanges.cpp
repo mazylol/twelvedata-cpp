@@ -1,4 +1,4 @@
-#include "Exchanges.h"
+#include "twelvedata.hpp"
 
 Twelvedata::Reference::Exchanges::Exchanges(
     const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,

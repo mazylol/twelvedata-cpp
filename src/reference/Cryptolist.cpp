@@ -1,6 +1,4 @@
-#include "Cryptolist.h"
-
-#include <utility>
+#include "twelvedata.hpp"
 
 Twelvedata::Reference::CryptocurrenciesList::CryptocurrenciesList(
         const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,

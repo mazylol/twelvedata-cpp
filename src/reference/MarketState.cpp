@@ -1,4 +1,4 @@
-#include "MarketState.h"
+#include "twelvedata.hpp"
 
 std::vector<Twelvedata::Reference::MarketStateItem> Twelvedata::Reference::getMarketState(
     const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,

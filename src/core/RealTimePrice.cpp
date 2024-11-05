@@ -1,4 +1,4 @@
-#include "RealTimePrice.h"
+#include "twelvedata.hpp"
 
 Twelvedata::Core::RealTimePrice::RealTimePrice(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc, std::unordered_map<const char *, const char *> params) {
     try {
