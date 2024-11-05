@@ -79,7 +79,7 @@ if (BUILD_TESTING)
     configure_file(${ENV_FILE_SOURCE} ${ENV_FILE_DESTINATION} COPYONLY)
 
     # Add testing dependencies
-    CPMAddPackage("gh:mazylol/dotenvloader@1.0")
+    CPMAddPackage("gh:mazylol/dotenvloader@1.0.1")
     CPMAddPackage("gh:libcpr/cpr#1.10.5") # subject to change
 
     # Create test executable
