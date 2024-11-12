@@ -26,7 +26,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         src/core/RealTimePrice.cpp
         src/core/TimeSeries.cpp
 
-        # Reference data components
+        # Reference components
         src/reference/Bondlist.cpp
         src/reference/Commoditieslist.cpp
         src/reference/Countries.cpp
@@ -42,6 +42,11 @@ target_sources(${PROJECT_NAME} PRIVATE
         src/reference/MarketState.cpp
         src/reference/Stocklist.cpp
         src/reference/SymbolSearch.cpp
+
+        # Mutual funds components
+        src/mutual_funds/MutualFundList.cpp
+        src/mutual_funds/MutualFundFamilyList.cpp
+        src/mutual_funds/MutualFundTypeList.cpp
 )
 
 # Macro to set common target properties

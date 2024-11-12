@@ -422,6 +422,59 @@ namespace Twelvedata {
         };
         // End End of Day Price
     }
+
+    namespace MutualFunds {
+        // Start Mutual Fund List
+        struct MutualFundListItem {
+            std::string symbol;
+            std::string name;
+            std::string country;
+            std::string fund_family;
+            std::string fund_type;
+            int performance_rating;
+            int risk_rating;
+            std::string currency;
+            std::string exchange;
+            std::string mic_code;
+        };
+
+        struct MutualFundsListResult {
+            int count;
+            std::vector<MutualFundListItem> list;
+            std::string status;
+        };
+
+        struct MutualFundsList {
+            MutualFundsListResult result;
+            std::string status;
+
+            [[maybe_unused]]
+            MutualFundsList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+                            std::unordered_map<const char *, const char *> params);
+        };
+        // End Mutual Fund List
+
+        // Start Mutual Fund Family List
+        struct MutualFundsFamilyList {
+            std::unordered_map<std::string, std::vector<std::string>> result;
+            std::string status;
+
+            [[maybe_unused]]
+            MutualFundsFamilyList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+                                 std::unordered_map<const char *, const char *> params);
+        };
+        // End Mutual Fund Family List
+
+        // Start Mutual Fund Type List
+        struct MutualFundsTypeList {
+            std::unordered_map<std::string, std::vector<std::string>> result;
+            std::string status;
+
+            [[maybe_unused]]
+            MutualFundsTypeList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+                                std::unordered_map<const char *, const char *> params);
+        };
+    }
 }
 
 #endif // TWELVEDATA_H

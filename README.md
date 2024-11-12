@@ -82,7 +82,18 @@ good conscience do it myself as I do not have paid access and cannot test it.
     - [x] Price `/price`
     - [x] End of Day Price `/eod`
     - [ ] Market Movers `/market_movers/{stocks,etf,mutal_funds,forex,crypto}` (Paid)
-
+- Mutual Funds
+    - [x] Mutual Funds List `/mutual_funds/list`
+    - [x] Mutual Funds Family List `/mutual_funds/family`
+    - [ ] Mutual Funds Type List `/mutual_funds/type`
+    - [ ] All Data `/mutual_funds/world` (Paid)
+    - [ ] Summary `/mutual_funds/world/summary` (Paid)
+    - [ ] Performance `/mutual_funds/world/performance` (Paid)
+    - [ ] Risk `/mutual_funds/world/risk` (Paid)
+    - [ ] Ratings `/mutual_funds/world/ratings` (Paid)
+    - [ ] Composition `/mutual_funds/world/composition` (Paid)
+    - [ ] Purchase Info `/mutual_funds/world/purchase_info` (Paid)
+    - [ ] Sustainability `/mutual_funds/world/sustainability` (Paid)
 ## Note
 
 I HIGHLY recommend that you use parameters in your queries. For example, the /funds endpoint returns, at the time of

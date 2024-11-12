@@ -64,11 +64,11 @@ int main() {
         std::cout << bond.symbol << std::endl;
     }*/
 
-   /*auto etfList = Twelvedata::Reference::EtfsList(httpGet, {});
+    /*auto etfList = Twelvedata::Reference::EtfsList(httpGet, {});
 
-    for (const auto &etf : etfList.data) {
-        std::cout << etf.symbol << std::endl;
-    }*/
+     for (const auto &etf : etfList.data) {
+         std::cout << etf.symbol << std::endl;
+     }*/
 
     /*auto indicesList = Twelvedata::Reference::IndicesList(httpGet, {});
 
@@ -117,11 +117,11 @@ int main() {
     std::cout << earliestTimestamp.datetime << std::endl;
     std::cout << earliestTimestamp.unix_time << std::endl;*/
 
-    auto symbolSearchList = Twelvedata::Reference::SymbolSearchList(httpGet, {{"symbol", "AAPL"}});
+    /*auto symbolSearchList = Twelvedata::Reference::SymbolSearchList(httpGet, {{"symbol", "AAPL"}});
 
     for (const auto &symbol : symbolSearchList.data) {
         std::cout << symbol.symbol << std::endl;
-    }
+    }*/
 
     /*auto timeSeries = Twelvedata::Core::TimeSeries(httpGet, {{"symbol", "AAPL"}, {"interval", "1min"}});
 
@@ -146,6 +146,24 @@ int main() {
     /*auto endOfDayPrice = Twelvedata::Core::EndOfDayPrice(httpGet, {{"symbol", "AAPL"}});
 
     std::cout << endOfDayPrice.close << std::endl;*/
+
+    /*auto mutualFundsList = Twelvedata::MutualFunds::MutualFundsList(httpGet, {});
+
+    for (const auto &fund : mutualFundsList.result.list) {
+        std::cout << fund.symbol << std::endl;
+    }*/
+
+    /*auto mutualFundsFamilyList = Twelvedata::MutualFunds::MutualFundsFamilyList(httpGet, {});
+
+    for (const auto &fund : mutualFundsFamilyList.result["Austria"]) {
+        std::cout << fund << std::endl;
+    }*/
+
+    auto mutualFundsTypeList = Twelvedata::MutualFunds::MutualFundsTypeList(httpGet, {});
+
+    for (const auto &fund : mutualFundsTypeList.result["Austria"]) {
+        std::cout << fund << std::endl;
+    }
 
     return 0;
 }
