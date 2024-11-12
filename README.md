@@ -85,7 +85,7 @@ good conscience do it myself as I do not have paid access and cannot test it.
 - Mutual Funds
     - [x] Mutual Funds List `/mutual_funds/list`
     - [x] Mutual Funds Family List `/mutual_funds/family`
-    - [ ] Mutual Funds Type List `/mutual_funds/type`
+    - [x] Mutual Funds Type List `/mutual_funds/type`
     - [ ] All Data `/mutual_funds/world` (Paid)
     - [ ] Summary `/mutual_funds/world/summary` (Paid)
     - [ ] Performance `/mutual_funds/world/performance` (Paid)
