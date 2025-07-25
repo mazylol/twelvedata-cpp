@@ -1,5 +1,8 @@
 #include "twelvedata.hpp"
 
+#include <iostream>
+#include <nlohmann/json.hpp>
+
 Twelvedata::Reference::SymbolSearchList::SymbolSearchList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc, std::unordered_map<const char *, const char *> params) {
     try {
         std::string text = getFunc("https://api.twelvedata.com/symbol_search", std::move(params));

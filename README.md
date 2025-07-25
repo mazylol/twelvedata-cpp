@@ -1,6 +1,8 @@
 # twelvedata-cpp
 
-This library handles requests to [twelvedata](https://twelvedata.com). It is HTTP library agnostic. You just have to make a function for the library to call. It is designed this way so that you do not have to mess around with endpoints but can still use any library that you want.
+This library handles requests to [twelvedata](https://twelvedata.com). It is HTTP library agnostic. You just have to
+make a function for the library to call. It is designed this way so that you do not have to mess around with endpoints
+but can still use any library that you want.
 
 ## Example using [cpr](https://github.com/libcpr/cpr):
 
@@ -93,6 +95,7 @@ good conscience do it myself as I do not have paid access and cannot test it.
     - [ ] Composition `/mutual_funds/world/composition` (Paid)
     - [ ] Purchase Info `/mutual_funds/world/purchase_info` (Paid)
     - [ ] Sustainability `/mutual_funds/world/sustainability` (Paid)
+
 ## Note
 
 I HIGHLY recommend that you use parameters in your queries. For example, the /funds endpoint returns, at the time of

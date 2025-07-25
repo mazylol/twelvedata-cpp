@@ -1,8 +1,11 @@
 #include "twelvedata.hpp"
 
+#include <iostream>
+#include <nlohmann/json.hpp>
+
 Twelvedata::Reference::StocksList::StocksList(
-        const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
-        std::unordered_map<const char *, const char *> params) {
+    const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
+    std::unordered_map<const char *, const char *> params) {
     try {
         std::string text = getFunc("https://api.twelvedata.com/stocks", std::move(params));
 
@@ -11,7 +14,7 @@ Twelvedata::Reference::StocksList::StocksList(
         this->status = object.at("status").get<std::string>();
         this->count = object.at("count").get<int>();
 
-        for (const auto &dataJson: object.at("data")) {
+        for (const auto &dataJson : object.at("data")) {
             Twelvedata::Reference::StockListItem listItem;
 
             listItem.symbol = dataJson.at("symbol").get<std::string>();

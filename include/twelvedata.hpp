@@ -1,9 +1,7 @@
-#ifndef TWELVEDATA_H
-#define TWELVEDATA_H
+#ifndef TWELVEDATA_HPP
+#define TWELVEDATA_HPP
 
 #include <functional>
-#include <iostream>
-#include <nlohmann/json.hpp>
 #include <string>
 #include <vector>
 
@@ -461,7 +459,7 @@ namespace Twelvedata {
 
             [[maybe_unused]]
             MutualFundsFamilyList(const std::function<std::string(const char *, std::unordered_map<const char *, const char *>)> &getFunc,
-                                 std::unordered_map<const char *, const char *> params);
+                                  std::unordered_map<const char *, const char *> params);
         };
         // End Mutual Fund Family List
 
@@ -477,4 +475,4 @@ namespace Twelvedata {
     }
 }
 
-#endif // TWELVEDATA_H
+#endif // TWELVEDATA_HPP
